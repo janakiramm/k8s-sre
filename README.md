@@ -99,6 +99,7 @@ npx -y @modelcontextprotocol/inspector@latest
 
 ```bash
 pip install -r requirements.txt
+source .venv/bin/activate
 ```
 
 ---
