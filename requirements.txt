@@ -1,0 +1,11 @@
+kubernetes
+httpx>=0.27.0
+# Agent 1 — Diagnose (CrewAI + GPT-4)
+crewai>=0.121.0
+crewai-tools[mcp]>=0.40.0
+# Agent 2 — Remediate (Google ADK + Gemini)
+google-adk>=1.2.0
+google-genai>=1.0.0
+google-cloud-storage >= 3.0.0
+# Agent 3 — Verify (Strands + Anthropic Claude)
+strands-agents[anthropic]>=0.1.0

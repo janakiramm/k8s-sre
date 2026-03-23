@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: memory-hog
+  namespace: default
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: memory-hog
+  template:
+    metadata:
+      labels:
+        app: memory-hog
+    spec:
+      terminationGracePeriodSeconds: 5
+      containers:
+      - name: stress
+        image: python:3.12-slim
+        command: ["python3", "-c", "import signal,time; signal.signal(signal.SIGTERM,lambda *a:exit(0)); x=bytearray(256*1024*1024); time.sleep(3600)"]
+        resources:
+          limits:
+            memory: "64Mi"
+          requests:
+            memory: "64Mi"

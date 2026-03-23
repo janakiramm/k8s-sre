@@ -1,0 +1,16 @@
+ingress:
+  enabled: false
+
+rbac:
+  create: true
+  extraClusterRoleBindings:
+    - name: mcp-full-access
+      roleRef:
+        name: edit
+        external: true
+
+service:
+  enabled: true
+
+args:
+  - "--stateless"
